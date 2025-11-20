@@ -7,57 +7,72 @@
 </head>
 <body>
 
-<!-- Scroll Ruler -->
-<div id="scrollRuler"></div>
+<!-- Top Navbar -->
+<nav>
+    <span id="homeBtn">Straight Yays</span>
+    <span id="gemCount">Gems: 0</span>
+</nav>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" id="hero">
     <h1>Straight Yays</h1>
     <h2>Make School Easier.</h2>
-    <p>All the tools you need to succeed in one place: grade calculator, word counter, flashcards, study timer, MLA citation formatter, and more.</p>
+    <button id="signUpBtn" class="blue-btn">Sign Up</button>
+    <p class="grey-text">or <span id="logInBtn" class="blue-text">Log In</span></p>
 </section>
 
-<!-- Tools Sections -->
-<section class="tool" id="grade">
-    <h2>Grade Calculator</h2>
-    <input id="scores" placeholder="Enter scores like 80,90,100">
-    <button onclick="calcGrade()">Calculate</button>
-    <p id="gradeResult"></p>
+<!-- Sign-Up / Log-In Section -->
+<section id="signUpForm" class="form-section hidden">
+    <h2>Create Your Account</h2>
+    <input id="username" placeholder="Username (do not use full name)">
+    <input id="gmail" placeholder="Gmail">
+    <input type="password" id="password" placeholder="Password">
+    <input id="favTool" placeholder="Which tool will you mostly use?">
+    <button id="submitSignUp" class="blue-btn">Sign Up</button>
+    <button id="googleSignUp" class="blue-btn">Sign up with Google</button>
 </section>
 
-<section class="tool" id="word">
-    <h2>Word Counter</h2>
-    <textarea id="text" rows="6" cols="40"></textarea>
-    <button onclick="countWords()">Count Words</button>
-    <p id="wordResult"></p>
+<!-- Dashboard Section -->
+<section id="dashboard" class="hidden">
+    <h2 id="greeting"></h2>
+    <p>What do you want to do today?</p>
+    
+    <!-- Tools -->
+    <div id="toolsContainer" class="cards-container">
+        <div class="tool-card" onclick="calcGrade()">
+            <h3>Grade Calculator</h3>
+            <p>Calculate your grades (1 gem)</p>
+        </div>
+        <div class="tool-card" onclick="countWords()">
+            <h3>Word Counter</h3>
+            <p>Count words in text (1 gem)</p>
+        </div>
+        <div class="tool-card" onclick="addFlashcard()">
+            <h3>Flashcards</h3>
+            <p>Create flashcards (1 gem)</p>
+        </div>
+        <div class="tool-card" onclick="startTimer()">
+            <h3>Study Timer</h3>
+            <p>Focus with a timer (1 gem)</p>
+        </div>
+        <div class="tool-card" onclick="mla()">
+            <h3>MLA Formatter</h3>
+            <p>Format citations (1 gem)</p>
+        </div>
+    </div>
+
+    <!-- Chat Bubble -->
+    <div id="chatBubble">
+        <h3>AI Helper</h3>
+        <div id="chatLog" class="chat-log"></div>
+        <input id="chatInput" placeholder="Ask the helper...">
+        <button id="sendChat">Send (0.5 gems)</button>
+    </div>
 </section>
 
-<section class="tool" id="flash">
-    <h2>Flashcards</h2>
-    <input id="front" placeholder="Front">
-    <input id="back" placeholder="Back">
-    <button onclick="addCard()">Add</button>
-    <div id="cards"></div>
-</section>
-
-<section class="tool" id="timer">
-    <h2>Study Timer</h2>
-    <input id="minutes" placeholder="Minutes">
-    <button onclick="startTimer()">Start</button>
-    <p id="time"></p>
-</section>
-
-<section class="tool" id="mla">
-    <h2>MLA Citation</h2>
-    <input id="author" placeholder="Author">
-    <input id="title" placeholder="Title">
-    <input id="site" placeholder="Website Name">
-    <input id="date" placeholder="Date (2024)">
-    <button onclick="mla()">Format</button>
-    <p id="mlaResult"></p>
-</section>
-
+<script src="script/auth.js"></script>
+<script src="script/home.js"></script>
 <script src="script/tools.js"></script>
-<script src="script/ruler.js"></script>
+<script src="script/chat.js"></script>
 </body>
 </html>
