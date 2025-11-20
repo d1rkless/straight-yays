@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Straight Yays</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll Ruler -->
+<div id="scrollRuler"></div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Straight Yays</h1>
+    <h2>Make School Easier.</h2>
+    <p>All the tools you need to succeed in one place: grade calculator, word counter, flashcards, study timer, MLA citation formatter, and more.</p>
+</section>
+
+<!-- Tools Sections -->
+<section class="tool" id="grade">
+    <h2>Grade Calculator</h2>
+    <input id="scores" placeholder="Enter scores like 80,90,100">
+    <button onclick="calcGrade()">Calculate</button>
+    <p id="gradeResult"></p>
+</section>
+
+<section class="tool" id="word">
+    <h2>Word Counter</h2>
+    <textarea id="text" rows="6" cols="40"></textarea>
+    <button onclick="countWords()">Count Words</button>
+    <p id="wordResult"></p>
+</section>
+
+<section class="tool" id="flash">
+    <h2>Flashcards</h2>
+    <input id="front" placeholder="Front">
+    <input id="back" placeholder="Back">
+    <button onclick="addCard()">Add</button>
+    <div id="cards"></div>
+</section>
+
+<section class="tool" id="timer">
+    <h2>Study Timer</h2>
+    <input id="minutes" placeholder="Minutes">
+    <button onclick="startTimer()">Start</button>
+    <p id="time"></p>
+</section>
+
+<section class="tool" id="mla">
+    <h2>MLA Citation</h2>
+    <input id="author" placeholder="Author">
+    <input id="title" placeholder="Title">
+    <input id="site" placeholder="Website Name">
+    <input id="date" placeholder="Date (2024)">
+    <button onclick="mla()">Format</button>
+    <p id="mlaResult"></p>
+</section>
+
+<script src="script/tools.js"></script>
+<script src="script/ruler.js"></script>
+</body>
+</html>
